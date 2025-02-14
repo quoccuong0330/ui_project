@@ -47,7 +47,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     font-size: 12px;
-    font-weight: 700;
+    
 
 }
 .block2-item-content{
@@ -58,7 +58,7 @@
 
 .text-top {
     color:#F5F5F5;
-
+    font-weight: 700;
 }
 
 .text-bottom {
