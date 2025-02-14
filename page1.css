@@ -62,6 +62,7 @@
     align-items: center;
     font-size: 10px;
     font-weight: 500;
+    
 }
 
 .wrapper-block1 {
@@ -85,12 +86,14 @@
     font-weight: 700;
     font-size: 14px;
     color: #0057A0;
+    letter-spacing: 1.4px;
 }
 
 .block1-title-left {
     font-weight: 400;
     font-size: 12px;
     color: #0057A0;
+    letter-spacing: 1.4px;
 }
  
 .block-content {
@@ -170,6 +173,7 @@
 }
 .block3-item-content {
     font-size: 10px;
+    margin-left: 10px;
 }
 .block3-item-point {
     justify-content: flex-end;
