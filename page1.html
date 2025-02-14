@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./page1.css">
+    <link rel="stylesheet" href="./css_lirbary.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <div class="header-wrapper ">
+            <div class="header-wrapper-left header-wrapper-width"></div>
+            <div class="header-wrapper-center">
+                <div class="image-block">
+                    <img class="image" src="./public/assets/icons/logo.svg"/>
+                </div>
+                <div class="content-block">
+                    <div class="content-block-text1 content-block-text">NEXT.HR</div>
+                    <div class="content-block-text2 content-block-text">Ai Chatbot</div>
+                </div>
+            </div>
+            <div class="header-wrapper-right header-wrapper-width">
+                面接日：yyyy/mm/dd
+            </div>
+        </div>
+
+        <!-- part1 -->
+        <div class="wrapper-block1">
+            <div class="block1-title">
+               <div class="block1-title-right">応募者</div>
+               <div class="block1-title-left">新卒</div>
+            </div>
+            <div class="block-content">
+                <div class="block-content-item">
+                    <div class="content-item-title">氏名</div>
+                    <div class="content-item-value">name</div>
+                </div>
+                <div class="block-content-item">
+                    <div class="content-item-title">回答時間</div>
+                    <div class="content-item-value">hh : mm 〜 hh : mm</div>
+                </div>
+                <div class="block-content-item">
+                    <div class="content-item-title">生年月日</div>
+                    <div class="content-item-value">yyyy/mm/dd</div>
+                </div>
+                <div class="block-content-item">
+                    <div class="content-item-title">年齢</div>
+                    <div class="content-item-value">age</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- part2 -->
+        <div class="wrapper-block2">
+            <div class="block2-title flex-column">
+                <div class="block1-title-right">企業マッチ度診断</div>
+                <div class="d-flex ">
+                    <div class="flex-1 justify-center align-center">
+                       <div  class="d-flex wrapper-left-block2">
+                            <div class="block2-title">C</div>
+                            <div class="block2-point">(28/50)</div>
+                       </div>
+                    </div>
+                    <div class="flex-1 justify-center align-center">
+                        <canvas id="radarChart"></canvas>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- part3 -->
+        <div class="wrapper-block3">
+            <div class="block3-item">
+                <div class=" block3-item-title fs12 fw700 flex-2">スキル・経験</div>
+                <div class=" block3-item-content fs10 fw500 flex-6"> text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </div>
+                <div class=" block3-item-point fs12 fw700 color-p flex-1">6/10</div>
+            </div>
+            <div class="block3-item">
+                <div class=" block3-item-title fs12 fw700 flex-2">人物像・働き方</div>
+                <div class=" block3-item-content fs10 fw500 flex-6"> text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </div>
+                <div class=" block3-item-point fs12 fw700 color-p flex-1">5/10</div>
+            </div>
+            <div class="block3-item">
+                <div class=" block3-item-title fs12 fw700 flex-2">企業の価値観</div>
+                <div class=" block3-item-content fs10 fw500 flex-6"> text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </div>
+                <div class=" block3-item-point fs12 fw700 color-p flex-1">1/10</div>
+            </div>
+            <div class="block3-item">
+                <div class=" block3-item-title fs12 fw700 flex-2">キャリアプラン</div>
+                <div class=" block3-item-content fs10 fw500 flex-6"> text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </div>
+                <div class=" block3-item-point fs12 fw700 color-p flex-1">10/10</div>
+            </div>
+            <div class="block3-item">
+                <div class=" block3-item-title fs12 fw700 flex-2">キャリアプラン</div>
+                <div class=" block3-item-content fs10 fw500 flex-6"> text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text </div>
+                <div class=" block3-item-point fs12 fw700 color-p flex-1">6/10</div>
+            </div>
+            <div class="block3-item border-none">
+                <div class=" block3-item-title-last fs12 fw700 flex-2 color-p">総評</div>
+                <div class=" block3-item-content fs10 fw500 flex-7">  text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script>
+    const ctx = document.getElementById('radarChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['スキル・経験', '人物像・働き方', '企業の価値観', '企業の価値観', '企業への貢献度'],
+            datasets: [{
+                label: '',
+                data: [50, 48, 15, 100, 90],
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderWidth: 2,
+                pointRadius:0,
+                pointHoverRadius:0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio:false,
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                pointLabels: {
+                    display: true  
+                },
+                ticks: {
+                    display: false,
+                    stepSize: 20,
+                    count: 5        
+                }
+                }, 
+            },  plugins: {
+            legend: {
+                display: false  
+            }
+        }
+        }
+    });
+</script>
+
+</html>
